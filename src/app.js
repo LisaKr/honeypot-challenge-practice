@@ -18,7 +18,7 @@ export default class App extends React.Component {
         let resp = await axios.get("/pokemons/16");
         this.setState({
             pokemons: resp.data
-        }, () => {console.log(this.state);});
+        }, () => {console.log(this.state.pokemons);});
     }
 
     setPokemonIdIntoState(id) {
