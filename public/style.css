@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    font-family: "Montserrat";
+}
+
+.page-container {
+    position: relative;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.pokemon-container {
+    background: #F2F1F1;
+    border-radius: 10px;
+}
+
+.types {
+    display: flex;
+    justify-content: space-between;
+}
+
+.type {
+    width: 50%;
+    text-align: center;
+    border-radius: 0 10px 0 10px;
+}
+
+.orange {
+    background: #E85B0E;
+}
+
+.green {
+    background: #A0DA5E;
+}
+
+.pink {
+    background: #BE93E7;
+}
+
+.blue {
+    background: #4A9ED2;
+}
+
+.grey {
+    background: #D8D8D8;
+}
+
+
+.modal-container {
+    position: fixed;
+    z-index: 99;
+    width: 50%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 2px solid black;
+}
