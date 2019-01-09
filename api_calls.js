@@ -36,6 +36,7 @@ function getPokeInfo(someNumber) {
                 let stats = [];
                 let moves = [];
                 let imgurlLarge, imgurlSmall;
+                let moveLen;
 
                 for (let i =0; i < parsedBody.types.length; i++) {
                     types.push(parsedBody.types[i].type.name);
@@ -51,7 +52,12 @@ function getPokeInfo(someNumber) {
                     });
                 }
 
-                for (let i =0; i < parsedBody.moves.length; i++) {
+                if (parsedBody.moves.length > 20) {
+                    moveLen = 21;
+                }  else {
+                    moveLen = parsedBody.moves.length;
+                }
+                for (let i = 0; i < moveLen; i++) {
                     moves.push(parsedBody.moves[i].move.name);
                 }
 

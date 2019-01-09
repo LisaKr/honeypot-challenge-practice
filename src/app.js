@@ -12,6 +12,7 @@ export default class App extends React.Component {
         this.setPokemonIdIntoState = this.setPokemonIdIntoState.bind(this);
         this.getClass = this.getClass.bind(this);
         this.showModal = this.showModal.bind(this);
+        this.hideModal = this.hideModal.bind(this);
     }
 
     async componentDidMount() {
@@ -29,6 +30,11 @@ export default class App extends React.Component {
 
     showModal() {
         this.setState({showModal: true});
+    }
+
+    hideModal() {
+        console.log("clicked!");
+        this.setState({showModal: false});
     }
 
     getClass(type) {
@@ -80,7 +86,7 @@ export default class App extends React.Component {
                         })}
                 </div>
 
-                {this.state.showModal && this.state.currId && <Modal id={this.state.currId} pokemons={this.state.pokemons}/>}
+                {this.state.showModal && this.state.currId && <Modal id={this.state.currId} pokemons={this.state.pokemons} hideModal={this.hideModal}/>}
             </div>
         );
     }
