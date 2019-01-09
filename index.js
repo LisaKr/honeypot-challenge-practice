@@ -22,11 +22,11 @@ app.use(express.static("./public"));
 
 
 /////GETTING POKEMON INFORMATION////////
-app.get("/pokemons/:number", async (req,res) => {
+app.get("/pokemons/:number/:second", async (req,res) => {
     try {
-        let resp = await test(req.params.number);
-        console.log("resp", resp);
+        let resp = await test(req.params.number, req.params.second);
         res.json(resp);
+
     } catch(err) {
         console.log("error in pokemons", err);
     }

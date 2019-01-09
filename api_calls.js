@@ -96,14 +96,15 @@ function getPokeInfo(someNumber) {
     });
 }
 
-module.exports.test = function test(num) {
+module.exports.test = function test(num, secondNum) {
     let arrayOfPromises = [];
 
     num = parseInt(num);
-    num++;
+    secondNum = parseInt(secondNum);
+    secondNum++;
 
     //we await a promise for every iteration, so that arrayOfPromises is full of pending promises
-    for (let i = 1; i < num; i++) {
+    for (let i = num; i < secondNum; i++) {
         console.log(i);
         arrayOfPromises.push(getPokeInfo([i]));
     }

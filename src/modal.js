@@ -15,8 +15,9 @@ export default class Modal extends React.Component {
 
     render() {
         return(
-            <div className="modal-container" tabIndex="0" onBlur={ this.props.hideModal }>
+            <div className="modal-container">
                 {this.state.currPok && <div className="currPok-container">
+                    <h2 className="closing-button" onClick = {this.props.hideModal}> X </h2>
                     <h1 className="modal-name">#{this.state.currPok.id} {this.state.currPok.name}</h1>
                     <img className="largeImage" src={this.state.currPok.imgurlLarge}/>
                     <div className="descr blue">
@@ -37,18 +38,18 @@ export default class Modal extends React.Component {
                     </div>
 
                     <div className="stats-con grey">
-                        <p className="stats">
-                            <strong>Base Stats</strong> <br/>
+                        <strong>Base Stats</strong>
+                        <div className="stats">
                             {this.state.currPok.stats.map(
                                 st => {
                                     return(
                                         <div className="stat" key={st.statName}>
-                                            {st.statName} {st.stat}
+                                            {st.stat} <br/> {st.statName}
                                         </div>
                                     );
                                 }
                             )}
-                        </p>
+                        </div>
 
                     </div>
 
